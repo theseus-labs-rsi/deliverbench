@@ -3,7 +3,7 @@
 </p>
 <h1 align="center">DeliverBench</h1>
 <p align="center"><strong>面向连续、多阶段专业项目交付的 Agent 评测</strong></p>
-<p align="center"><a href="https://deliverbench.github.io/"><strong>🌐 项目主页</strong></a> &nbsp; · &nbsp; <a href="https://huggingface.co/datasets/deliverbench/DeliverBench"><strong>🤗 数据集</strong></a> &nbsp; · &nbsp; <a href="#安装与下载"><strong>🚀 快速开始</strong></a> &nbsp; · &nbsp; <a href="https://github.com/theseus-labs-rsi/deliverbench#deliverbench"><strong>🌏 English</strong></a></p>
+<p align="center"><a href="https://deliverbench.github.io/"><strong>🌐 项目主页</strong></a> &nbsp; · &nbsp; <a href="https://huggingface.co/datasets/deliverbench/DeliverBench"><strong>🤗 数据集</strong></a> &nbsp; · &nbsp; <a href="#安装与下载"><strong>🚀 快速开始</strong></a> &nbsp; · &nbsp; <a href="https://github.com/theseus-labs-rsi/deliverbench"><strong>🌏 English</strong></a></p>
 
 DeliverBench 以连续的专业项目评估 Agent：同一会话在持久工作区内完成阶段交付，
 接收新材料与基于自身产物生成的回应，修订已有工作，最后提交完整成果。
