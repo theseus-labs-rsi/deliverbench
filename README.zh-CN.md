@@ -17,9 +17,8 @@ DeliverBench 以连续的专业项目评估 Agent：同一会话在持久工作�
 ```sh
 git clone https://github.com/theseus-labs-rsi/deliverbench.git
 cd deliverbench
-git checkout v3.1.1
 uv venv --python 3.12 .venv
-uv pip install --python .venv/bin/python uv 'git+https://github.com/theseus-labs-rsi/deliverbench.git@v3.1.1#subdirectory=deliverbench-harbor' -r requirements-tools.txt
+uv pip install --python .venv/bin/python uv ./deliverbench-harbor -r requirements-tools.txt
 source .venv/bin/activate
 python scripts/download_data.py --project all --output-dir data
 ```
@@ -48,9 +47,9 @@ python data/02_project_mars_refinancing/qa/pipeline_probe.py --output "$PWD/chec
 另行检索这些隐藏材料。FINAL 独立评分，不平均过程分、不继承历史 hurdle。
 缺判决、不可读证据和流程故障不补成零分；真实 hurdle 命中可以产生有效零分。
 
-## 版本与许可
+## 兼容性与许可
 
-题包版本 3.1.1，公共扩展 0.7.2，原生 Harbor 0.20.0。软件采用 Apache-2.0；
+公共扩展 0.7.2，原生 Harbor 0.20.0。软件采用 Apache-2.0；
 题包内容采用 CC BY 4.0，随附可执行脚本采用 Apache-2.0。
 三个项目的源材料归属与保留说明见数据集 LICENSING.md。
 

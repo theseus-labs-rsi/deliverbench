@@ -20,9 +20,8 @@ images and your own run artifacts.
 ```sh
 git clone https://github.com/theseus-labs-rsi/deliverbench.git
 cd deliverbench
-git checkout v3.1.1
 uv venv --python 3.12 .venv
-uv pip install --python .venv/bin/python uv 'git+https://github.com/theseus-labs-rsi/deliverbench.git@v3.1.1#subdirectory=deliverbench-harbor' -r requirements-tools.txt
+uv pip install --python .venv/bin/python uv ./deliverbench-harbor -r requirements-tools.txt
 source .venv/bin/activate
 python scripts/download_data.py --project all --output-dir data
 harbor --version
@@ -94,7 +93,7 @@ from the repository root in the environment above. This runs offline checks; use
 project's `pipeline_probe.py` separately for Docker integration checks. Generated
 reports and run artifacts remain in your local output directory.
 
-The dataset is version 3.1.1; the shared extension is 0.7.2 and requires stock Harbor
+The shared extension is 0.7.2 and requires stock Harbor
 0.20.0. This project does not vendor Harbor or require private container images.
 
 ## License and citation

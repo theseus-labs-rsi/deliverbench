@@ -6,7 +6,7 @@
 
 ```sh
 uv venv --python 3.12 .venv-deliverbench
-uv pip install --python .venv-deliverbench/bin/python uv 'git+https://github.com/theseus-labs-rsi/deliverbench.git@v3.1.1#subdirectory=deliverbench-harbor'
+uv pip install --python .venv-deliverbench/bin/python uv ./deliverbench-harbor
 source .venv-deliverbench/bin/activate
 harbor --version
 harbor plugins list

@@ -5,6 +5,7 @@ import json
 import os
 from pathlib import Path
 import subprocess
+import shutil
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -17,8 +18,15 @@ def main():
     args = p.parse_args()
     data = args.data_dir.resolve()
     out = args.output_dir.resolve()
+    if out.is_relative_to(ROOT / 'deliverbench-harbor') or out.is_relative_to(data):
+        p.error('The output directory must be outside the extension and dataset directories')
     out.mkdir(parents=True, exist_ok=False)
-    qa = ROOT / 'deliverbench-harbor/qa'
+    # Local setuptools installs leave build and egg-info directories in the checkout.
+    # Audit a clean distribution view without deleting those local build artifacts.
+    clean_extension = out / 'extension_source'
+    shutil.copytree(ROOT / 'deliverbench-harbor', clean_extension,
+                    ignore=shutil.ignore_patterns('build', '*.egg-info', '__pycache__', '.DS_Store'))
+    qa = clean_extension / 'qa'
     projects = json.loads((ROOT / 'data_release.json').read_text())['projects']
     commands = []
     for name in ['background_checks', 'bonus_checks', 'kickoff_checks', 'material_release_checks', 'response_checks']:

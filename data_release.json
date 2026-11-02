@@ -1,6 +1,6 @@
 {
   "repo_id": "deliverbench/DeliverBench",
-  "revision": "9521c3980bdff56b31e8d4639544f0b10d944cfa",
+  "revision": "662e03d8589d20be4614812bfa4b192473329da3",
   "package_version": "3.1.1",
   "extension_version": "0.7.2",
   "harbor_version": "0.20.0",
@@ -35,13 +35,13 @@
         },
         {
           "path": "README.md",
-          "bytes": 4484,
-          "sha256": "3a36172343f50a4328040c9825ad24e6a9f910e51da7a0c974216637b861e5df"
+          "bytes": 4469,
+          "sha256": "8c08f89c4f94a0eab6f8e1709a3a6cfae1af09b43728ce385242e92fc2f1404a"
         },
         {
           "path": "SHA256SUMS",
           "bytes": 23880,
-          "sha256": "7deef94dbe535301e7d7c6f15845d9c490310d8b9eed94d4cc0e0b65a24b4a03"
+          "sha256": "cf6bb821a8851290e028fd12369dc6aece646c28b4800ac34caa2e467c67a3a2"
         },
         {
           "path": "dataset/metric.py",
@@ -1005,13 +1005,13 @@
         },
         {
           "path": "README.md",
-          "bytes": 4229,
-          "sha256": "e89ce1733ab92a1175422c39e7b04dc22ac5849d901a2b031410b2d0029c60da"
+          "bytes": 4214,
+          "sha256": "6782da323a2c2bb995712e5dfcb171f504cf791c5277da0b96ef1cef5beb6e53"
         },
         {
           "path": "SHA256SUMS",
           "bytes": 16439,
-          "sha256": "f3c3fead8ac46ca3070cce2249663c394a9c8ce24c7929851bd41b34245e8e71"
+          "sha256": "a498a6121e311724b86f7fbe2c843d1032018dd5e92b05aad81da19625a5643a"
         },
         {
           "path": "dataset/metric.py",
@@ -1740,13 +1740,13 @@
         },
         {
           "path": "README.md",
-          "bytes": 4221,
-          "sha256": "98f65a0eaf4115a3d5e99bea85d248959e1fd00353838a002e833636d31d892d"
+          "bytes": 4206,
+          "sha256": "9a34742254f0ce4fa1d1dba5b52ea66619de89b3f2ce657788d205343a1f5d49"
         },
         {
           "path": "SHA256SUMS",
           "bytes": 15904,
-          "sha256": "20f0d0fe272c14cced7d95eeedce662c02ec1d5f6737ac1474439080df9ec926"
+          "sha256": "5982d2edecabae219995498110e76024ecccd5e2757033cfaf4f0ae60c154d43"
         },
         {
           "path": "dataset/metric.py",
