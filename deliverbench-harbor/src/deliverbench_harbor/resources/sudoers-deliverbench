@@ -1,0 +1,2 @@
+Defaults!/usr/local/bin/python3 env_reset
+candidate ALL=(root) NOPASSWD: /usr/local/bin/python3 -I /opt/deliverbench/stage.py

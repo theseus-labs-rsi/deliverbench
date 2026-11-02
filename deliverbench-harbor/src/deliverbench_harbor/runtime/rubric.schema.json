@@ -1,0 +1,232 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deliverbench:rubric:1.1.0",
+  "title": "DeliverBench Rubric 1.1.0",
+  "description": "统一的隐藏评审契约。过程与最终评测共用结构；不含生成历史、模型评分或独立检查器配置。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "evaluation_unit",
+    "rubrics"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.1.0"
+    },
+    "evaluation_unit": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9_-]*$",
+      "description": "阶段 ID，或保留值 FINAL。必须与题包的评测单元声明一致。"
+    },
+    "rubrics": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/rubric"
+      }
+    }
+  },
+  "$defs": {
+    "rubric": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "description",
+        "weight",
+        "hurdle",
+        "target",
+        "dimension",
+        "evaluation_aspect",
+        "artifact_scope",
+        "depends_on",
+        "bonus"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_-]*$",
+          "description": "项目内稳定且唯一的判据 ID；语义不变时保留原 ID。"
+        },
+        "description": {
+          "type": "string",
+          "pattern": "\\S",
+          "minLength": 1,
+          "description": "自包含的完整命中条件，包含必要事实、容差、例外、核验位置和时间/版本范围。正项命中表示满足；负项和 hurdle 命中表示违规发生。"
+        },
+        "weight": {
+          "type": "integer",
+          "description": "整数权重：正项 >0，负项 <0，hurdle 恰为 0。不设统一上下限，不接受小数权重或未定义的部分命中。"
+        },
+        "hurdle": {
+          "type": "boolean",
+          "description": "true 表示本条违规命中后将当前评测单元得分置零。"
+        },
+        "target": {
+          "enum": [
+            "process_delivery",
+            "final_artifact",
+            "cross_file_relation",
+            "package_delivery"
+          ],
+          "description": "过程交付、最终单件交付、跨文件关系或整体交付包。"
+        },
+        "dimension": {
+          "enum": [
+            "correctness",
+            "completeness",
+            "consistency",
+            "professionalism",
+            "usability"
+          ],
+          "description": "唯一主分类；不参与分数组合或额外加权。"
+        },
+        "evaluation_aspect": {
+          "enum": [
+            "accuracy",
+            "reasoning_and_judgment",
+            "completeness_and_actionability",
+            "instruction_and_constraint",
+            "compliance_and_risk",
+            "evidence_and_traceability",
+            "communication_and_structure",
+            "consistency_and_state"
+          ],
+          "description": "具体评价角度，用于统计分析；不额外加权。"
+        },
+        "artifact_scope": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "\\S",
+            "minLength": 1
+          },
+          "description": "相对当前评测 submission 根的明确文件/目录路径；[\".\"] 表示本单元全部提交物。无 glob，无宿主绝对路径。"
+        },
+        "depends_on": {
+          "type": "array",
+          "minItems": 0,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+          },
+          "description": "真正影响计分的前置判据 ID。无依赖写 []；非空时全部父项有效命中才允许本条得分。仅正向非 hurdle 条目可依赖同单元正向非 hurdle 条目。"
+        },
+        "bonus": {
+          "type": "boolean",
+          "description": "加分项不计入基础分母；仅正向非 hurdle 判据可为 true。"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "hurdle": {
+                "const": true
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "weight": {
+                "const": 0
+              },
+              "depends_on": {
+                "maxItems": 0
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "weight": {
+                "not": {
+                  "const": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "weight": {
+                "exclusiveMaximum": 0
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "depends_on": {
+                "maxItems": 0
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "bonus": {
+                "const": true
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "weight": {
+                "exclusiveMinimum": 0
+              },
+              "hurdle": {
+                "const": false
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "evaluation_unit": {
+            "const": "FINAL"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "rubrics": {
+            "items": {
+              "properties": {
+                "target": {
+                  "enum": [
+                    "final_artifact",
+                    "cross_file_relation",
+                    "package_delivery"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "rubrics": {
+            "items": {
+              "properties": {
+                "target": {
+                  "const": "process_delivery"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

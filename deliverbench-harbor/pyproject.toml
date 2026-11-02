@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "deliverbench-harbor"
+version = "0.7.2"
+license = {text = "Apache-2.0"}
+readme = "README.md"
+description = "Shared Harbor extension for DeliverBench task packages"
+requires-python = ">=3.12"
+dependencies = ["harbor==0.20.0", "jsonschema==4.23.0", "pypdf>=5,<7"]
+
+[project.scripts]
+deliverbench-check = "deliverbench_harbor.acceptance:main"
+deliverbench-resume = "deliverbench_harbor.recovery:main"
+
+[project.entry-points."harbor.plugins"]
+deliverbench = "deliverbench_harbor.lifecycle:Plugin"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["deliverbench_harbor*"]
+
+[tool.setuptools.package-data]
+deliverbench_harbor = ["resources/*", "runtime/*.py", "runtime/*.json"]
