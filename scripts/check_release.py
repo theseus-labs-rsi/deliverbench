@@ -36,7 +36,7 @@ def main():
         for name in ['schema_checks', 'unit_checks', 'cumulative_checks', 'release_check']:
             commands.append((pid + '-' + name, [sys.executable, str(qa / (name + '.py')), '--project', str(task)]))
     commands.append(('language_hurdle_checks', [sys.executable, str(qa / 'language_hurdle_checks.py'),
-                                              '--project', str(data / projects['P02']['directory'])]))
+                                              '--project', str(data / projects['case-01']['directory'])]))
     commands.append(('download_checks', [sys.executable, str(ROOT / 'tests/test_download_data.py')]))
     env = {k: v for k, v in os.environ.items() if not k.startswith(('OPENAI_', 'ANTHROPIC_', 'JUDGE_', 'RESPONDER_'))}
     env['PYTHONDONTWRITEBYTECODE'] = '1'

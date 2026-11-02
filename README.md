@@ -5,8 +5,8 @@ one persistent session, produces intermediate documents, receives new materials 
 responses based on its own work, and delivers a final package.
 
 This release provides the execution and scoring code for three public projects:
-finance (P02, 13 stages), pharmacovigilance (P08, 12 stages), and legal delivery
-(P10, 8 stages). Each project has a separate FINAL evaluation.
+finance (Case 01, 13 stages), pharmacovigilance (Case 02, 12 stages), and legal delivery
+(Case 03, 8 stages). Each project has a separate FINAL evaluation.
 
 [Dataset](https://huggingface.co/datasets/deliverbench/DeliverBench) ·
 [中文说明](README.zh-CN.md)
@@ -29,7 +29,7 @@ harbor plugins list
 ```
 
 The downloader pins a dataset commit in `data_release.json` and verifies every
-project file. `--project P02`, `P08`, or `P10` downloads one project. An identical
+project file. `--project case-01`, `case-02`, or `case-03` downloads one project. An identical
 existing project is reused; changed files or extra files cause a refusal instead of
 an overwrite. The optional `--source-dir` reads a previously downloaded Hub snapshot.
 
@@ -39,10 +39,10 @@ Run the complete pipeline with authored reference fixtures and local synthetic
 Judge/Responder services. No paid model API is used. The output directory must be new.
 
 ```sh
-python data/02_project_mars_refinancing/qa/pipeline_probe.py --output "$PWD/checks/p02"
+python data/case-01_mars_refinancing/qa/pipeline_probe.py --output "$PWD/checks/case-01"
 ```
 
-Use the corresponding project directory for P08 or P10. These checks exercise the
+Use the corresponding project directory for Case 02 or Case 03. These checks exercise the
 execution protocol; their synthetic judgments do not measure model performance.
 
 ## Run your model
@@ -59,9 +59,9 @@ export JUDGE_API_KEY='<judge-api-key>'
 export JUDGE_BASE_URL='<judge-base-url>'
 export JUDGE_MODEL='<judge-model>'
 export RESPONDER_API=chat
-cd data/02_project_mars_refinancing
-harbor run -c harbor_job.yaml -a deliverbench_harbor.agents:Codex -m '<candidate-model>' --resume-trajectory --plugin deliverbench --job-name p02-my-model
-deliverbench-check jobs/p02-my-model --verify-evidence
+cd data/case-01_mars_refinancing
+harbor run -c harbor_job.yaml -a deliverbench_harbor.agents:Codex -m '<candidate-model>' --resume-trajectory --plugin deliverbench --job-name case-01-my-model
+deliverbench-check jobs/case-01-my-model --verify-evidence
 ```
 
 Model-specific configuration examples are included with each project. Inspect their

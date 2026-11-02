@@ -35,5 +35,5 @@ Judge 逐条独立给出命中与证据，不读取其他判决，不计算总�
 离线回归（不调用模型）：
 
 ```sh
-python deliverbench-harbor/qa/language_hurdle_checks.py --project data/02_project_mars_refinancing
+python deliverbench-harbor/qa/language_hurdle_checks.py --project data/case-01_mars_refinancing
 ```

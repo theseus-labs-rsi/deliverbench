@@ -36,7 +36,7 @@ def validate_manifest(manifest):
         raise ValueError('No project entries')
     directories = set()
     for pid, project in manifest['projects'].items():
-        if pid not in ('P02', 'P08', 'P10'):
+        if pid not in ('case-01', 'case-02', 'case-03'):
             raise ValueError('Unknown project ID')
         directory = project['directory']
         if len(safe_relative(directory).parts) != 1 or directory in directories:
@@ -132,12 +132,12 @@ def install_projects(manifest, selected, output_dir, source_dir=None):
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument('--project', choices=['all', 'P02', 'P08', 'P10', 'p02', 'p08', 'p10'], default='all')
+    p.add_argument('--project', choices=['all', 'case-01', 'case-02', 'case-03'], default='all')
     p.add_argument('--output-dir', type=Path, required=True)
     p.add_argument('--source-dir', type=Path, help='Read an existing Hub snapshot instead of downloading')
     args = p.parse_args()
     manifest = json.loads((ROOT / 'data_release.json').read_text())
-    selected = list(manifest['projects']) if args.project == 'all' else [args.project.upper()]
+    selected = list(manifest['projects']) if args.project == 'all' else [args.project]
     try:
         result = install_projects(manifest, selected, args.output_dir, args.source_dir)
     except (OSError, ValueError) as exc:

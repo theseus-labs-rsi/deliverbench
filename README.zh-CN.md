@@ -3,7 +3,7 @@
 DeliverBench 以连续的专业项目评估 Agent：同一会话在持久工作区内完成阶段交付，
 接收新材料与基于自身产物生成的回应，最后提交完整成果。
 
-首批公开 P02 金融再融资（13 阶段）、P08 药物警戒（12 阶段）、P10 法律交付
+首批公开 Case 01 金融再融资（13 阶段）、Case 02 药物警戒（12 阶段）、Case 03 法律交付
 （8 阶段），共 33 个过程阶段及 3 个独立 FINAL。
 
 [数据集](https://huggingface.co/datasets/deliverbench/DeliverBench) ·
@@ -23,13 +23,13 @@ source .venv/bin/activate
 python scripts/download_data.py --project all --output-dir data
 ```
 
-下载固定数据提交并逐文件核验 SHA256。可将 `all` 换为 `P02`、`P08` 或 `P10`。
+下载固定数据提交并逐文件核验 SHA256。可将 `all` 换为 `case-01`、`case-02` 或 `case-03`。
 已有目录只有完全一致时才会复用；存在修改或额外文件时拒绝覆盖。
 
 ## 无付费检查
 
 ```sh
-python data/02_project_mars_refinancing/qa/pipeline_probe.py --output "$PWD/checks/p02"
+python data/case-01_mars_refinancing/qa/pipeline_probe.py --output "$PWD/checks/case-01"
 ```
 
 该入口使用参考方案与本地合成 Judge/Responder，不调用付费模型。

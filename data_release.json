@@ -1,12 +1,12 @@
 {
   "repo_id": "deliverbench/DeliverBench",
-  "revision": "662e03d8589d20be4614812bfa4b192473329da3",
+  "revision": "84c8551cf917965e0ea8221e00bb1dca7828f4e5",
   "package_version": "3.1.1",
   "extension_version": "0.7.2",
   "harbor_version": "0.20.0",
   "projects": {
-    "P02": {
-      "directory": "02_project_mars_refinancing",
+    "case-01": {
+      "directory": "case-01_mars_refinancing",
       "files": [
         {
           "path": ".env.example",
@@ -35,13 +35,13 @@
         },
         {
           "path": "README.md",
-          "bytes": 4469,
-          "sha256": "8c08f89c4f94a0eab6f8e1709a3a6cfae1af09b43728ce385242e92fc2f1404a"
+          "bytes": 4485,
+          "sha256": "33888c1e6e2c07bb788c616c6f5d36ae77afee37da4118693384969bc6656d28"
         },
         {
           "path": "SHA256SUMS",
           "bytes": 23880,
-          "sha256": "cf6bb821a8851290e028fd12369dc6aece646c28b4800ac34caa2e467c67a3a2"
+          "sha256": "954ce8e7f1e1d5f08bdd903c71af3154e11f68239b3bd001530509bb55fa0d71"
         },
         {
           "path": "dataset/metric.py",
@@ -55,33 +55,33 @@
         },
         {
           "path": "harbor_deepseek.yaml",
-          "bytes": 590,
-          "sha256": "c1c7dd21493726938cef49f904f630a131e65ac2db67694a075e4b1f244b819d"
+          "bytes": 594,
+          "sha256": "91171aebbf7763ab66a5cd9d29a10963a4aea2cd8af38a606a39c2b5921105b9"
         },
         {
           "path": "harbor_gpt_external.yaml",
-          "bytes": 624,
-          "sha256": "372bb93d5391a4dc3b95df42f63361c3b33e84bcf1f314f66d38d02f7b286f9f"
+          "bytes": 628,
+          "sha256": "7744c3617616b5999c363ba5359eefbbfc3452d10337e1cc8455713e5185dbc4"
         },
         {
           "path": "harbor_job.yaml",
-          "bytes": 488,
-          "sha256": "b34345f8e328f90f77d23e81fb8399da04a5a305da5f3a98a944978dbdfa83a8"
+          "bytes": 493,
+          "sha256": "20b2c496e9daa9a44a5cac1a54361d39aa658e1b3326d9669da0e0472c2e3e4c"
         },
         {
           "path": "harbor_opus.yaml",
-          "bytes": 574,
-          "sha256": "71f3c4dcee1ebb16e315d5a7d407dafd8f7bd7e2b395f9ef1dc29466f8200892"
+          "bytes": 578,
+          "sha256": "e3089dcd5383b88046ef6b2399bcf89036017a8ee5bf4ac1b2e60d3f6e8a39dc"
         },
         {
           "path": "harbor_oracle.yaml",
-          "bytes": 421,
-          "sha256": "0f093a94300add0716cd513878b877c46a179fff6057c7ed1e0b307794b95159"
+          "bytes": 426,
+          "sha256": "4f6dd690efe5c6f3189bf055e89362fa721853cd18a7c1f095381d0298bd64de"
         },
         {
           "path": "harbor_qwen.yaml",
-          "bytes": 547,
-          "sha256": "84ddb2e5764e6a21564c8351014db53cb523f50171e7b56c989f7bcf55909a96"
+          "bytes": 551,
+          "sha256": "f110dc5363bc7183e5ac58bd331c93f9451d1cf32fc769d05c7cbde9aada4802"
         },
         {
           "path": "qa/check_stage_evidence.py",
@@ -100,8 +100,8 @@
         },
         {
           "path": "qa/pipeline_probe.py",
-          "bytes": 4777,
-          "sha256": "6fc23bb2d77d9d3e27b66edee5549f87c3b38c46ddceab260c22eb66aab1bd95"
+          "bytes": 4786,
+          "sha256": "364f33cf6ff0fbfa7af236824ce73c0f73ccb54c4f7cb99260e4fdb73c4c04a0"
         },
         {
           "path": "task/deliverbench.json",
@@ -975,8 +975,8 @@
         }
       ]
     },
-    "P08": {
-      "directory": "08_pv_icsr",
+    "case-02": {
+      "directory": "case-02_pv_icsr",
       "files": [
         {
           "path": ".env.example",
@@ -1005,13 +1005,13 @@
         },
         {
           "path": "README.md",
-          "bytes": 4214,
-          "sha256": "6782da323a2c2bb995712e5dfcb171f504cf791c5277da0b96ef1cef5beb6e53"
+          "bytes": 4230,
+          "sha256": "9d9900f32d4e9556a6215dc31356bebeeb23ee780c0c574ba1d3a256547502dc"
         },
         {
           "path": "SHA256SUMS",
           "bytes": 16439,
-          "sha256": "a498a6121e311724b86f7fbe2c843d1032018dd5e92b05aad81da19625a5643a"
+          "sha256": "c7f24949f0c47bb6aa5a21331d22c0c562195dddf65d5ecc670ab556cd4ccebf"
         },
         {
           "path": "dataset/metric.py",
@@ -1025,33 +1025,33 @@
         },
         {
           "path": "harbor_deepseek.yaml",
-          "bytes": 590,
-          "sha256": "ba051a1090fc5bd735cdfa46add19b5a564d75a7b9a5a134ebec92b74e9bc41e"
+          "bytes": 594,
+          "sha256": "5a47dd358cdbae53dab0c990bf3fedca5b79671b41990c35ada7c7a0cde8c300"
         },
         {
           "path": "harbor_gpt_external.yaml",
-          "bytes": 624,
-          "sha256": "120349a3826013a0c78d98b0602341cac102a6645e774783f78605069e30ee44"
+          "bytes": 628,
+          "sha256": "8fda3821c1a3102940d25704526a065695968869cc6a0887536cc4eccde642c4"
         },
         {
           "path": "harbor_job.yaml",
-          "bytes": 488,
-          "sha256": "47435e7a6823fa0aa994f24c8849ba96319638688faf745ae7874aea0381c2d5"
+          "bytes": 493,
+          "sha256": "63b16406946e0b11e7105ab024660618c6cb8e136bf3530496ae7fe28519dfea"
         },
         {
           "path": "harbor_opus.yaml",
-          "bytes": 574,
-          "sha256": "d9e5ec32ee7803c6a3bbd826437e4e049594d44e57fcc5a04e8fdf3de19768fa"
+          "bytes": 578,
+          "sha256": "c7de61261270bd6b87df05e9cf67c7c4d72cc2297fdf80834bf34be74471011c"
         },
         {
           "path": "harbor_oracle.yaml",
-          "bytes": 421,
-          "sha256": "a55b22b5f4e049304818c22126e7e7823179e39b4d12ba4cd3c2b2105cf63dfd"
+          "bytes": 426,
+          "sha256": "b430ba0776791aac23969ca70e56cebff6f9daa4f601ab0c90e0873b82f15b48"
         },
         {
           "path": "harbor_qwen.yaml",
-          "bytes": 547,
-          "sha256": "750eeed6afeed3bc303a69f292a77c8e2e387a45e225375ec3e28fe7409c99c2"
+          "bytes": 551,
+          "sha256": "952bf1657d664f4eb0e2a01ab846a0524403bc3cf7fbdef78d577788ae900bef"
         },
         {
           "path": "qa/check_stage_evidence.py",
@@ -1070,8 +1070,8 @@
         },
         {
           "path": "qa/pipeline_probe.py",
-          "bytes": 4777,
-          "sha256": "6fc23bb2d77d9d3e27b66edee5549f87c3b38c46ddceab260c22eb66aab1bd95"
+          "bytes": 4786,
+          "sha256": "364f33cf6ff0fbfa7af236824ce73c0f73ccb54c4f7cb99260e4fdb73c4c04a0"
         },
         {
           "path": "task/deliverbench.json",
@@ -1710,8 +1710,8 @@
         }
       ]
     },
-    "P10": {
-      "directory": "10_starpulse_legal",
+    "case-03": {
+      "directory": "case-03_starpulse_legal",
       "files": [
         {
           "path": ".env.example",
@@ -1740,13 +1740,13 @@
         },
         {
           "path": "README.md",
-          "bytes": 4206,
-          "sha256": "9a34742254f0ce4fa1d1dba5b52ea66619de89b3f2ce657788d205343a1f5d49"
+          "bytes": 4222,
+          "sha256": "939144472ed9910ff80bcc840b8423a7b9d55f87198ca11ee25f9edb94383e06"
         },
         {
           "path": "SHA256SUMS",
           "bytes": 15904,
-          "sha256": "5982d2edecabae219995498110e76024ecccd5e2757033cfaf4f0ae60c154d43"
+          "sha256": "f26cb3ab8d4a7de00f0806099ad30d343efb8beaccc5e6e895781170f70ff987"
         },
         {
           "path": "dataset/metric.py",
@@ -1760,33 +1760,33 @@
         },
         {
           "path": "harbor_deepseek.yaml",
-          "bytes": 590,
-          "sha256": "67e779b065d8a212b99050eb99434af945a9df00225b5e162fe93dc15cbd9932"
+          "bytes": 594,
+          "sha256": "4991db850b8ed27760918f10e3f8535fed0f18cee3965b526c11cfe362c6a449"
         },
         {
           "path": "harbor_gpt_external.yaml",
-          "bytes": 624,
-          "sha256": "94a66a182af37a14c3539326916748b5faa3c756d794e0a91233d6468460836b"
+          "bytes": 628,
+          "sha256": "94b0372448a1b2a770432b2c655d129d833a5e9b3c879947a382a6245ae34cb6"
         },
         {
           "path": "harbor_job.yaml",
-          "bytes": 488,
-          "sha256": "6e172033f8c3e55794cdf70e4f7f397a1be95ce528bcc7022a14846cc7c7df4e"
+          "bytes": 493,
+          "sha256": "41662cc944815da2f6b3c8041c23cee0e981f90d170220d0f2d1053d9b6781ca"
         },
         {
           "path": "harbor_opus.yaml",
-          "bytes": 574,
-          "sha256": "5f962f180f14709a7962cc9ea5d74ba2cd4de2a393f359dbca9c1f3e1ce0b1a6"
+          "bytes": 578,
+          "sha256": "e20f3d3aadc3d38f1962e1ed3bfd8092e241e915e7510070abaf5f18e69ba620"
         },
         {
           "path": "harbor_oracle.yaml",
-          "bytes": 421,
-          "sha256": "96f3783274dcb6d689e50012c7fa102d4760da35723bdb9029ca91fd4cf7db7d"
+          "bytes": 426,
+          "sha256": "4d04ae90ef7d4b2dda6fe97712d45c111887853b0f80db7991d9824ec10e40f2"
         },
         {
           "path": "harbor_qwen.yaml",
-          "bytes": 547,
-          "sha256": "12e3f0eb111d2b285f2c69caa2888bcbdf95fdcce52bb5704472fb48a612ed00"
+          "bytes": 551,
+          "sha256": "e47697ce765e5a8b50b06c7479bdc18666f422b2f2d06b6bfd61016cecd9da32"
         },
         {
           "path": "qa/check_stage_evidence.py",
@@ -1805,8 +1805,8 @@
         },
         {
           "path": "qa/pipeline_probe.py",
-          "bytes": 4777,
-          "sha256": "6fc23bb2d77d9d3e27b66edee5549f87c3b38c46ddceab260c22eb66aab1bd95"
+          "bytes": 4786,
+          "sha256": "364f33cf6ff0fbfa7af236824ce73c0f73ccb54c4f7cb99260e4fdb73c4c04a0"
         },
         {
           "path": "task/deliverbench.json",

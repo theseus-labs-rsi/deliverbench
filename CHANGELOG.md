@@ -2,12 +2,12 @@
 
 ## Initial public release
 
-- Initial public distribution of P02, P08, and P10 with the Harbor extension 0.7.2.
-- Explicit P02 Chinese-body language-violation criteria and structured language
+- Initial public distribution of Case 01, Case 02, and Case 03 with the Harbor extension 0.7.2.
+- Explicit Case 01 Chinese-body language-violation criteria and structured language
   observation checks. Contradictory or unreadable evidence blocks a numeric score.
 - Fixed-revision dataset downloads with file hashes and safe existing-directory checks.
 
 Harbor is pinned to 0.20.0.
 
 - Install the pinned Codex platform binary explicitly and check its version during Docker builds.
-- Align the P02 synthetic pipeline fixture with the language-observation schema.
+- Align the Case 01 synthetic pipeline fixture with the language-observation schema.
