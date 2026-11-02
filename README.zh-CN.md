@@ -3,14 +3,14 @@
 </p>
 <h1 align="center">DeliverBench</h1>
 <p align="center"><strong>面向连续、多阶段专业项目交付的 Agent 评测</strong></p>
-<p align="center"><a href="https://deliverbench.github.io/">项目主页</a> · <a href="https://huggingface.co/datasets/deliverbench/DeliverBench">数据集</a> · <a href="#安装与下载">快速开始</a> · <a href="README.md">English</a></p>
+<p align="center"><a href="https://deliverbench.github.io/"><strong>🌐 项目主页</strong></a> &nbsp; · &nbsp; <a href="https://huggingface.co/datasets/deliverbench/DeliverBench"><strong>🤗 数据集</strong></a> &nbsp; · &nbsp; <a href="#安装与下载"><strong>🚀 快速开始</strong></a> &nbsp; · &nbsp; <a href="https://github.com/theseus-labs-rsi/deliverbench#deliverbench"><strong>🌏 English</strong></a></p>
 
 DeliverBench 以连续的专业项目评估 Agent：同一会话在持久工作区内完成阶段交付，
 接收新材料与基于自身产物生成的回应，修订已有工作，最后提交完整成果。
 
 [![从个人辅助、独立任务执行到完整专业项目交付](assets/figure-01-motivation.png)](assets/figure-01-motivation.png)
 
-<sub>图一 · 评估单位从单个任务扩展到完整的多阶段专业项目。</sub>
+<sub>评估单位从单个任务扩展到完整的多阶段专业项目。</sub>
 
 ## 三个公开案例
 
@@ -43,13 +43,13 @@ python scripts/download_data.py --project all --output-dir data
 
 [![同一Agent在持久工作区中持续完成任务，分别评价过程交付与最终交付](assets/figure-03-execution.png)](assets/figure-03-execution.png)
 
-<sub>图三 · 后续任务使用并修订 Agent 自己的已有产物；过程评分与最终交付评分相互独立。</sub>
+<sub>后续任务使用并修订 Agent 自己的已有产物；过程评分与最终交付评分相互独立。</sub>
 
 ## 一个完整项目如何衔接
 
 [![银团贷款再融资项目的十三个阶段、产物依赖与六份最终交付物](assets/figure-08-dependencies.png)](assets/figure-08-dependencies.png)
 
-<sub>图八 · 对应公开案例 Case 01，展示尽调、融资方案、建模审阅到最终签约交付的衔接；沿用论文原图。</sub>
+<sub>对应公开案例 Case 01，展示尽调、融资方案、建模审阅到最终签约交付的衔接；沿用论文原图。</sub>
 
 ## 无付费检查
 
