@@ -1,15 +1,28 @@
-# DeliverBench
+<p align="center">
+  <a href="https://deliverbench.github.io/"><img src="assets/logo-folio.svg" width="76" alt="DeliverBench project mark"></a>
+</p>
+<h1 align="center">DeliverBench</h1>
+<p align="center"><strong>Benchmarking AI agents on continuous professional project delivery</strong></p>
+<p align="center"><a href="https://deliverbench.github.io/">Project website</a> · <a href="https://huggingface.co/datasets/deliverbench/DeliverBench">Dataset</a> · <a href="#quick-start">Quick start</a> · <a href="README.zh-CN.md">中文</a></p>
 
-DeliverBench evaluates agents on continuous professional projects. An agent works in
-one persistent session, produces intermediate documents, receives new materials and
-responses based on its own work, and delivers a final package.
+DeliverBench evaluates how agents carry a professional project through evolving inputs,
+interdependent tasks, and a final multi-file handoff. The agent stays in one persistent
+workspace, revises its own earlier work, and responds to new materials and feedback.
 
-This release provides the execution and scoring code for three public projects:
-finance (Case 01, 13 stages), pharmacovigilance (Case 02, 12 stages), and legal delivery
-(Case 03, 8 stages). Each project has a separate FINAL evaluation.
+[![From personal assistance and independent task execution to continuous professional project delivery](assets/figure-01-motivation.png)](assets/figure-01-motivation.png)
 
-[Dataset](https://huggingface.co/datasets/deliverbench/DeliverBench) ·
-[中文说明](README.zh-CN.md)
+<sub>Figure 1 · The evaluation unit expands from individual tasks to a complete professional project.</sub>
+
+## Three public cases
+
+| Case | Professional workflow | Stages | Explore |
+|:---|:---|:---:|:---|
+| **Case 01** | Project Mars Refinancing | 13 | [Files](https://huggingface.co/datasets/deliverbench/DeliverBench/tree/main/projects/case-01_mars_refinancing) · [ZIP](https://huggingface.co/datasets/deliverbench/DeliverBench/resolve/main/archives/DeliverBench-Case01.zip?download=true) |
+| **Case 02** | Pharmacovigilance ICSR | 12 | [Files](https://huggingface.co/datasets/deliverbench/DeliverBench/tree/main/projects/case-02_pv_icsr) · [ZIP](https://huggingface.co/datasets/deliverbench/DeliverBench/resolve/main/archives/DeliverBench-Case02.zip?download=true) |
+| **Case 03** | StarPulse Legal Delivery | 8 | [Files](https://huggingface.co/datasets/deliverbench/DeliverBench/tree/main/projects/case-03_starpulse_legal) · [ZIP](https://huggingface.co/datasets/deliverbench/DeliverBench/resolve/main/archives/DeliverBench-Case03.zip?download=true) |
+
+Each case also has one independent FINAL evaluation. This public collection contains
+three complete projects; it is not the entire research collection.
 
 ## Quick start
 
@@ -32,6 +45,33 @@ The downloader pins a dataset commit in `data_release.json` and verifies every
 project file. `--project case-01`, `case-02`, or `case-03` downloads one project. An identical
 existing project is reused; changed files or extra files cause a refusal instead of
 an overwrite. The optional `--source-dir` reads a previously downloaded Hub snapshot.
+
+## How delivery works
+
+[![Continuous execution in one persistent workspace, checkpoint evaluation, and independent final delivery evaluation](assets/figure-03-execution.png)](assets/figure-03-execution.png)
+
+<sub>Figure 3 · The same agent carries its work across stages. Checkpoints and the final delivery package are evaluated separately.</sub>
+
+The opening background is unscored. Stage inputs are released at their designated
+time; the agent carries its own artifacts forward. Authored reference files, rubrics,
+future materials, and simulator internals are not made available in the Candidate
+workspace by the runner. Public availability of those files does not permit an
+evaluation agent to retrieve them from the public repository.
+
+Each scored unit freezes its evidence and receives complete criterion judgments.
+Process and FINAL evaluations assess different submitted versions; FINAL does not
+average process scores or inherit previous hurdle hits. Missing judgments, unreadable
+evidence, and workflow errors are not converted into valid zero scores. A genuine
+hurdle violation can produce a valid zero. See [the scoring contract](deliverbench-harbor/README.md).
+
+The public repositories contain task definitions and software only. They contain no
+model submissions, benchmark scores, judgments, execution traces, or run reports.
+
+## A project in practice
+
+[![Thirteen refinancing subtasks grouped into due diligence, financing proposal, modelling and review, and syndication and handoff](assets/figure-08-dependencies.png)](assets/figure-08-dependencies.png)
+
+<sub>Figure 8 · Case 01: earlier analyses, models, and lender feedback feed into a six-file final handoff. Original paper artwork.</sub>
 
 ## Check the installation
 
@@ -68,23 +108,6 @@ Model-specific configuration examples are included with each project. Inspect th
 provider route and pinned tool version before use. Keep Judge and Responder settings
 fixed when comparing agents. See [running and scoring](docs/RUNNING.md).
 
-## Execution and scoring
-
-The opening background is unscored. Stage inputs are released at their designated
-time; the agent carries its own artifacts forward. Authored reference files, rubrics,
-future materials, and simulator internals are not made available in the Candidate
-workspace by the runner. Public availability of those files does not permit an
-evaluation agent to retrieve them from the public repository.
-
-Each scored unit freezes its evidence and receives complete criterion judgments.
-Process and FINAL evaluations assess different submitted versions; FINAL does not
-average process scores or inherit previous hurdle hits. Missing judgments, unreadable
-evidence, and workflow errors are not converted into valid zero scores. A genuine
-hurdle violation can produce a valid zero. See [the scoring contract](deliverbench-harbor/README.md).
-
-The public repositories contain task definitions and software only. They contain no
-model submissions, benchmark scores, judgments, execution traces, or run reports.
-
 ## Development
 
 `deliverbench-harbor/qa` contains protocol tests. Run
@@ -98,6 +121,6 @@ The shared extension is 0.7.2 and requires stock Harbor
 
 ## License and citation
 
-Code is licensed under [Apache-2.0](LICENSE). Dataset content is CC BY 4.0; executable
-files shipped with the dataset are Apache-2.0. See the dataset's licensing notice.
+Code is licensed under [Apache-2.0](LICENSE). [Presentation figures](assets/README.md)
+and dataset content are CC BY 4.0; executable files shipped with the dataset are Apache-2.0. See the dataset's licensing notice.
 [CITATION.bib](CITATION.bib) provides software and dataset references.
