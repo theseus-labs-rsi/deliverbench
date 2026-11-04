@@ -3,7 +3,7 @@
 </p>
 <h1 align="center">DeliverBench</h1>
 <p align="center"><strong>Benchmarking AI agents on continuous professional project delivery</strong></p>
-<p align="center"><a href="https://deliverbench.github.io/"><strong>🌐 Project website</strong></a> &nbsp; · &nbsp; <a href="https://huggingface.co/datasets/deliverbench/DeliverBench"><strong>🤗 Dataset</strong></a> &nbsp; · &nbsp; <a href="#quick-start"><strong>🚀 Quick start</strong></a> &nbsp; · &nbsp; <a href="README.zh-CN.md"><strong>🌏 中文</strong></a></p>
+<p align="center"><a href="https://arxiv.org/abs/2611.03412"><strong>📄 Paper</strong></a> &nbsp; · &nbsp; <a href="https://deliverbench.github.io/"><strong>🌐 Project website</strong></a> &nbsp; · &nbsp; <a href="https://huggingface.co/datasets/deliverbench/DeliverBench"><strong>🤗 Dataset</strong></a> &nbsp; · &nbsp; <a href="#quick-start"><strong>🚀 Quick start</strong></a> &nbsp; · &nbsp; <a href="README.zh-CN.md"><strong>🌏 中文</strong></a></p>
 
 DeliverBench evaluates how agents carry a professional project through evolving inputs,
 interdependent tasks, and a final multi-file handoff. The agent stays in one persistent
